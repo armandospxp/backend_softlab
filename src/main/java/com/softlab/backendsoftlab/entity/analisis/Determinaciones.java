@@ -1,4 +1,4 @@
-package com.softlab.backendsoftlab.models.analisis;
+package com.softlab.backendsoftlab.entity.analisis;
 
 public class Determinaciones {
     private int id_determinacion;

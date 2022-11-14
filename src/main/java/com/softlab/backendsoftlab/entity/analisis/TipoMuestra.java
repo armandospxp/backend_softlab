@@ -1,4 +1,4 @@
-package com.softlab.backendsoftlab.models.analisis;
+package com.softlab.backendsoftlab.entity.analisis;
 
 public class TipoMuestra {
     private int id_tipo_muestra;

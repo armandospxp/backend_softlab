@@ -1,4 +1,4 @@
-package com.softlab.backendsoftlab.models.resultados;
+package com.softlab.backendsoftlab.entity.resultados;
 
 public class Resultado {
     private int id_resultado;

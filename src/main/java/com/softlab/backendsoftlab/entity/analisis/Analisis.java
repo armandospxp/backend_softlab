@@ -1,4 +1,4 @@
-package com.softlab.backendsoftlab.models.analisis;
+package com.softlab.backendsoftlab.entity.analisis;
 
 /****
  * Modelo Análisis
