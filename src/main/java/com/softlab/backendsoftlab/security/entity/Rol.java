@@ -5,6 +5,7 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.persistence.*;
 
+@Entity
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,6 +15,10 @@ public class Rol {
     private RolNombre nombre_rol;
 
     public Rol() {
+    }
+
+    public Rol(@NotNull RolNombre nombre_rol) {
+        this.nombre_rol = nombre_rol;
     }
 
     public int getId_rol() {

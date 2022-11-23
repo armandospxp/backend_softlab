@@ -13,9 +13,9 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
     @NotNull
-    private String nombre_usuario;
+    private String nombreUsuario;
     @NotNull
-    private String nombre_apellido;
+    private String nombreApellido;
     @NotNull
     @Column(unique = true)
     private String email;
@@ -30,9 +30,9 @@ public class Usuario {
 
     }
 
-    public Usuario(@NotNull String nombre_usuario, @NotNull String nombre_apellido, @NotNull String email, @NotNull String password) {
-        this.nombre_usuario = nombre_usuario;
-        this.nombre_apellido = nombre_apellido;
+    public Usuario(@NotNull String nombreUsuario, @NotNull String nombreApellido, @NotNull String email, @NotNull String password) {
+        this.nombreUsuario = nombreUsuario;
+        this.nombreApellido = nombreApellido;
         this.email = email;
         this.password = password;
     }
@@ -45,20 +45,20 @@ public class Usuario {
         this.id_usuario = id_usuario;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getnombreUsuario() {
+        return nombreUsuario;
     }
 
-    public void setNombre_usuario(String nombre_usuario) {
-        this.nombre_usuario = nombre_usuario;
+    public void setnombreUsuario(String nombreUsuario) {
+        this.nombreUsuario = nombreUsuario;
     }
 
-    public String getNombre_apellido() {
-        return nombre_apellido;
+    public String getnombreApellido() {
+        return nombreApellido;
     }
 
-    public void setNombre_apellido(String nombre_apellido) {
-        this.nombre_apellido = nombre_apellido;
+    public void setnombreApellido(String nombreApellido) {
+        this.nombreApellido = nombreApellido;
     }
 
     public String getEmail() {
