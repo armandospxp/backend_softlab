@@ -10,23 +10,24 @@ import java.util.stream.Collectors;
 
 public class UsuarioPrincipal implements UserDetails {
     private String nombre;
-    private String nombre_usuario;
+    private String nombreUsuario;
     private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-
-    public UsuarioPrincipal(String nombre, String nombre_usuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UsuarioPrincipal(String nombre, String nombreUsuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.nombre = nombre;
-        this.nombre_usuario = nombre_usuario;
+        this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
     }
 
     public static UsuarioPrincipal build(Usuario usuario){
-        List<SimpleGrantedAuthority> authorities = usuario.getRoles().stream().map(rol->new SimpleGrantedAuthority(rol.getNombre_rol().name())).collect(Collectors.toList());
-        return new UsuarioPrincipal(usuario.getnombreUsuario(), usuario.getnombreApellido(), usuario.getEmail(), usuario.getPassword(), authorities);
+        List<GrantedAuthority> authorities =
+                usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol
+                        .getRolNombre().name())).collect(Collectors.toList());
+        return new UsuarioPrincipal(usuario.getNombre(), usuario.getNombreUsuario(), usuario.getEmail(), usuario.getPassword(), authorities);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class UsuarioPrincipal implements UserDetails {
 
     @Override
     public String getUsername() {
-        return nombre_usuario;
+        return nombreUsuario;
     }
 
     @Override
@@ -64,12 +65,11 @@ public class UsuarioPrincipal implements UserDetails {
         return true;
     }
 
-    public String getNombre_usuario() {
-        return nombre_usuario;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getEmail() {
         return email;
     }
-
 }

@@ -9,31 +9,31 @@ import javax.persistence.*;
 public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_rol;
+    private int id;
     @NotNull
     @Enumerated(EnumType.STRING)
-    private RolNombre nombre_rol;
+    private RolNombre rolNombre;
 
     public Rol() {
     }
 
-    public Rol(@NotNull RolNombre nombre_rol) {
-        this.nombre_rol = nombre_rol;
+    public Rol(@NotNull RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
     }
 
-    public int getId_rol() {
-        return id_rol;
+    public int getId() {
+        return id;
     }
 
-    public void setId_rol(int id_rol) {
-        this.id_rol = id_rol;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public RolNombre getNombre_rol() {
-        return nombre_rol;
+    public RolNombre getRolNombre() {
+        return rolNombre;
     }
 
-    public void setNombre_rol(RolNombre nombre_rol) {
-        this.nombre_rol = nombre_rol;
+    public void setRolNombre(RolNombre rolNombre) {
+        this.rolNombre = rolNombre;
     }
 }

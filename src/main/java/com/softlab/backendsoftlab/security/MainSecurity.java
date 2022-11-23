@@ -2,7 +2,7 @@ package com.softlab.backendsoftlab.security;
 
 import com.softlab.backendsoftlab.security.jwt.JwtEntryPoint;
 import com.softlab.backendsoftlab.security.jwt.JwtTokenFilter;
-import com.softlab.backendsoftlab.security.service.UserDetailServiceImpl;
+import com.softlab.backendsoftlab.security.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MainSecurity {
     @Autowired
-    UserDetailServiceImpl userDetailService;
+    UserDetailsServiceImpl userDetailService;
 
     @Autowired
     JwtEntryPoint jwtEntryPoint;

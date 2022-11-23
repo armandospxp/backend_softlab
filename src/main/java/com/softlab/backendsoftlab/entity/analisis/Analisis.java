@@ -1,12 +1,19 @@
 package com.softlab.backendsoftlab.entity.analisis;
 
+import javax.persistence.*;
+
 /****
  * Modelo Análisis
  *
  *
  */
 
+@Entity
+@Table(name="analisis")
 public class Analisis {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private int id_analisis;
     private String nombre_analisis;
     private String descripcion_analisis;

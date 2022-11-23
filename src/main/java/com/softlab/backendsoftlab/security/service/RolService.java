@@ -16,10 +16,11 @@ public class RolService {
     @Autowired
     RolRepository rolRepository;
 
-    public Optional<Rol> getbyRolNombre(RolNombre rolNombre){
-        return rolRepository.findbyNombre(rolNombre);
+    public Optional<Rol> getByRolNombre(RolNombre rolNombre){
+        return rolRepository.findByRolNombre(rolNombre);
     }
 
-
-
+    public void save(Rol rol){
+        rolRepository.save(rol);
+    }
 }

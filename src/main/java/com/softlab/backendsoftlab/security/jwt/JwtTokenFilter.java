@@ -1,6 +1,6 @@
 package com.softlab.backendsoftlab.security.jwt;
 
-import com.softlab.backendsoftlab.security.service.UserDetailServiceImpl;
+import com.softlab.backendsoftlab.security.service.UserDetailsServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     @Autowired
     JwtProvider jwtProvider;
     @Autowired
-    UserDetailServiceImpl userDetailService;
+    UserDetailsServiceImpl userDetailService;
     private final static Logger logger = LoggerFactory.getLogger(JwtTokenFilter.class);
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain filterChain) throws ServletException, IOException {

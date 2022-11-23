@@ -11,54 +11,54 @@ import java.util.Set;
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_usuario;
+    private int id;
     @NotNull
-    private String nombreUsuario;
-    @NotNull
-    private String nombreApellido;
+    private String nombre;
     @NotNull
     @Column(unique = true)
+    private String nombreUsuario;
+    @NotNull
     private String email;
     @NotNull
     private String password;
-    @ManyToMany
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "id_usuario"),
-    inverseJoinColumns = @JoinColumn(name = "id_rol"))
-    private Set<Rol> roles = new HashSet<Rol>();
+    @NotNull
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id"))
+    private Set<Rol> roles = new HashSet<>();
 
-    public Usuario(){
-
+    public Usuario() {
     }
 
-    public Usuario(@NotNull String nombreUsuario, @NotNull String nombreApellido, @NotNull String email, @NotNull String password) {
+    public Usuario(@NotNull String nombre, @NotNull String nombreUsuario, @NotNull String email, @NotNull String password) {
+        this.nombre = nombre;
         this.nombreUsuario = nombreUsuario;
-        this.nombreApellido = nombreApellido;
         this.email = email;
         this.password = password;
     }
 
-    public int getId_usuario() {
-        return id_usuario;
+    public int getId() {
+        return id;
     }
 
-    public void setId_usuario(int id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getnombreUsuario() {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombreUsuario() {
         return nombreUsuario;
     }
 
-    public void setnombreUsuario(String nombreUsuario) {
+    public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
-    }
-
-    public String getnombreApellido() {
-        return nombreApellido;
-    }
-
-    public void setnombreApellido(String nombreApellido) {
-        this.nombreApellido = nombreApellido;
     }
 
     public String getEmail() {
